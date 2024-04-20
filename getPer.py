@@ -22,8 +22,8 @@ if __name__ == "__main__":
     # 두 개의 오디오 파일 로드
     voice_folder = "voicefolder"
     original_voice_folder = "originalVoice"
-    voice_file = "minsic.wav"
-    original_voice_file = "minsic.wav"
+    voice_file = "test1.wav"
+    original_voice_file = "test2.wav"
 
     voice_path = os.path.join(voice_folder, voice_file)
     original_voice_path = os.path.join(original_voice_folder, original_voice_file)

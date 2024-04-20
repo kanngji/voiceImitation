@@ -8,20 +8,7 @@ from dtw import dtw
 
 from datetime import datetime
 
-def load_audio(filename):
-    y, sr =librosa.load(filename, sr=None)
-    return y, sr
 
-def extracdt_mfcc(y, sr):
-    mfcc = librosa.feature.mfcc(y=y, sr=sr)
-    return mfcc
- 
-def calculate_similarity(mfcc1, mfcc2):
-    # DTW 알고리즘을 사용하여 두 MFCC 시퀀스 간의 거리 계산
-    d, _, _, _ = dtw(mfcc1.T, mfcc2.T, dist=lambda x, y: np.linalg.norm(x - y, ord=1))
-    # 거리 값이 클수록 두 오디오가 다르고, 작을수록 유사함
-    similarity = 1 / (1 + d)
-    return similarity
 
 
 def record_audio(filename, duration=5, sr=44100):
